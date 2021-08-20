@@ -12,12 +12,13 @@ services:
         environment:
             - TZ=${TZ:-America/Los_Angeles}
         volumes:
-            - events:/var/cache/zoneminder/events
-            - images:/var/cache/zoneminder/images
-            - mysql:/var/lib/mysql
-            - logs:/var/log/zoneminder
-volumes:
-  events:
-  images:
-  mysql:
-  logs:
+            - "./events:/var/cache/zoneminder/events"
+            - "./images:/var/cache/zoneminder/images"
+            - "./mysql:/var/lib/mysql"
+            - "./logs:/var/log/zoneminder"
+
+# volumes:
+#   events:
+#   images:
+#   mysql:
+#   logs:
