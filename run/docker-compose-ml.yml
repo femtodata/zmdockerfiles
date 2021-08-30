@@ -1,0 +1,43 @@
+version: '3.1'
+services:
+    zoneminder:
+        container_name: zoneminder
+        image: dlandon/zoneminder.machine.learning
+        restart: unless-stopped
+        ports:
+          - 8443:443
+          - 9000:9000
+          - 8080:80
+        network_mode: "bridge"
+        privileged: true
+        shm_size: 512M
+        # shm_size: 8G # recommended for ML
+        environment:
+            - TZ=${TZ:-America/Los_Angeles}
+            - PUID="99"
+            - PGID="100"
+            - MULTI_PORT_START="0"
+            - MULTI_PORT_END="0"
+        volumes:
+            - "./volumes/Zoneminder:/config:rw"
+            - "./volumes/Zoneminder/data:/var/cache/zoneminder:rw"
+
+# volumes:
+#   events:
+#   images:
+#   mysql:
+#   logs:
+
+# --net="bridge" \
+# --privileged="false" \
+# --shm-size="8G" \
+# -p 8443:443/tcp \
+# -p 9000:9000/tcp \
+# -e TZ="America/New_York" \
+# -e PUID="99" \
+# -e PGID="100" \
+# -e MULTI_PORT_START="0" \
+# -e MULTI_PORT_END="0" \
+# -v "/mnt/Zoneminder":"/config":rw \
+# -v "/mnt/Zoneminder/data":"/var/cache/zoneminder":rw \
+# dlandon/zoneminder.machine.learning

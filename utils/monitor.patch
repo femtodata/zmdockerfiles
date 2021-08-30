@@ -1,0 +1,12 @@
+diff --color -rupN orig/usr/share/zoneminder/www/api/app/Model/Monitor.php patched/usr/share/zoneminder/www/api/app/Model/Monitor.php
+--- orig/usr/share/zoneminder/www/api/app/Model/Monitor.php	2021-08-30 14:58:44.041685205 -0700
++++ patched/usr/share/zoneminder/www/api/app/Model/Monitor.php	2021-08-30 15:04:08.185456291 -0700
+@@ -122,7 +122,7 @@ class Monitor extends AppModel {
+       'Type'            => array('Local','Remote','File','Ffmpeg','Libvlc','cURL','WebSite', 'VNC'),
+       'Function'        => array('None','Monitor','Modect','Record','Mocord','Nodect'),
+       'Orientation'     => array('ROTATE_0','ROTATE_90','ROTATE_180','ROTATE_270','FLIP_HORI','FLIP_VERT'),
+-      'OutputCodec'     => array('h264','mjpeg','mpeg1','mpeg2'),
++      # 'OutputCodec'     => array('h264','mjpeg','mpeg1','mpeg2'),
+       'OutputContainer' => array('auto','mp4','mkv'),
+       'DefaultView'     => array('Events','Control'),
+       #'Status'          => array('Unknown','NotRunning','Running','NoSignal','Signal'),

@@ -1,7 +1,7 @@
 version: '3.1'
 services:
     zoneminder:
-        container_name: zoneminder
+        container_name: zoneminder_1_34
         image: zoneminderhq/zoneminder:1.34-ubuntu18.04
         restart: unless-stopped
         ports:
@@ -12,11 +12,11 @@ services:
         environment:
             - TZ=${TZ:-America/Los_Angeles}
         volumes:
-            - "./volumes/events:/var/cache/zoneminder/events"
-            - "./volumes/images:/var/cache/zoneminder/images"
-            - "./volumes/mysql:/var/lib/mysql"
-            - "./volumes/logs_old:/var/log/zoneminder"
-            - "./volumes/logs:/var/log/zm"
+            - "./volumes_1.34/events:/var/cache/zoneminder/events"
+            - "./volumes_1.34/images:/var/cache/zoneminder/images"
+            - "./volumes_1.34/mysql:/var/lib/mysql"
+            - "./volumes_1.34/logs_old:/var/log/zoneminder"
+            - "./volumes_1.34/logs:/var/log/zm"
 
 # volumes:
 #   events:
