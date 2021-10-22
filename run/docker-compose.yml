@@ -16,7 +16,6 @@ services:
             - "./volumes_1.36/images:/var/cache/zoneminder/images"
             - "./volumes_1.36/mysql:/var/lib/mysql"
             - "./volumes_1.36/logs:/var/log/zoneminder"
-            - "./volumes_1.36/logs_zm:/var/log/zm"
 
 # volumes:
 #   events:
